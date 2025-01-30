@@ -3,24 +3,30 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_demo/conter_provider.dart';
 
 class HomePageRevir extends ConsumerWidget {
-  HomePageRevir({super.key});
+  const HomePageRevir({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final count = ref.watch(counterProvider);
+    final counter = ref.watch(counterProvider);
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Center(child: Text('Home Page Revir')),
           Center(
-            child: Text('$context'),
+            child: Text(
+              '$counter',
+              style: TextStyle(fontSize: 25),
+            ),
           )
         ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => ref.read(counterProvider.notifier).state++,
-        child: Text('Count'),
+        child: Icon(
+          Icons.add,
+          color: Colors.green,
+        ),
       ),
     );
   }
