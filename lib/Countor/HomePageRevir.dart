@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:riverpod_demo/conter_provider.dart';
+import 'package:riverpod_demo/Countor/conter_provider.dart';
 
 class HomePageRevir extends ConsumerWidget {
   const HomePageRevir({super.key});
